@@ -1,4 +1,4 @@
-VirtualBox SyncTimer Chnager
+VirtualBox SyncTime Chnager
 Tool mekes it easier to disable time sync in VirtualBox.
 It depends on VBoxManage.exe
 
