@@ -1,0 +1,31 @@
+﻿<Window x:Class="VirtualBoxTimeSyncChanger.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VirtualBoxTimeSyncChanger"
+        mc:Ignorable="d"
+        Title="VirtualBox TimeSync Changer" Height="350" Width="525">
+    <Grid>
+    <StackPanel Orientation="Vertical" Margin="0,15,0,0">
+            <Button Name="btnOpenFile" Click="btnOpenFile_Click" Width="300">Select virtual machine .vbox file</Button>
+        <StackPanel Name="GUI_MachineData" Orientation="Vertical" HorizontalAlignment="Center" Width="525" Margin="0,15,0,0" Visibility="Hidden">
+            <Label Name="GUI_Label_machineName" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Bold">Machine name</Label>
+            <Label Name="GUI_machineName" HorizontalAlignment="Center" HorizontalContentAlignment="Center"></Label>
+            <Label Name="GUI_Label_machineUUID" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Bold">Machine UUID</Label>
+            <Label Name="GUI_UUID" HorizontalAlignment="Center" HorizontalContentAlignment="Center"></Label>
+            <Label Name="GUI_Label_machineOSType" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Bold">Machine OS Type</Label>
+            <Label Name="GUI_machineOSType" HorizontalAlignment="Center" HorizontalContentAlignment="Center"></Label>
+        </StackPanel>
+        <WrapPanel Orientation="Vertical" Height="20" HorizontalAlignment="Center" Margin="0,15,0,0">
+            <Button Name="btnSyncDisable" Click="btnSyncDisable_Click" Width="75" Margin="0,0,10,0" Visibility="Hidden">Disable</Button>
+            <Button Name="btnSyncEnable" Click="btnSyncEnable_Click" Width="75" Margin="10,0,0,0" Visibility="Hidden">Enable</Button>
+        </WrapPanel>
+        <WrapPanel Orientation="Vertical" Height="40" HorizontalAlignment="Center" Margin="0,10,0,0">
+                <Label Name="GUI_Label_SyncState" Width="auto" Padding="5,5,0,5" Visibility="Hidden">Synchronization</Label>
+                <Label Name="GUI_SyncState" Width="auto" Visibility="Hidden"></Label>
+        </WrapPanel>
+    </StackPanel>
+    <Label HorizontalAlignment="Center" VerticalAlignment="Bottom">© 2017 Dawid Nizioł</Label>
+    </Grid>
+</Window>
