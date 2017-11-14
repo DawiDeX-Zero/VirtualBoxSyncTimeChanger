@@ -7,17 +7,27 @@
         mc:Ignorable="d"
         Title="VirtualBox TimeSync Changer" Height="350" Width="525">
     <Grid>
+        <Popup Name="GUI_Popup_ChangeAllMachinesValue" Placement="Center" IsOpen="False" AllowsTransparency="True">
+            <DockPanel>
+                <Label Name="GUI_Popup_changeAllMachinesValue_Label" VerticalAlignment="Center" HorizontalAlignment="Center">What you want to do with all virtual machines?</Label>
+                <Button DockPanel.Dock="Bottom" Name="GUI_Popup_changeAllMachinesValue_btnEnable" Click="GUI_Popup_changeAllMachinesValue_btnEnable_Click" Width="50">Enable</Button>
+                <Button DockPanel.Dock="Bottom" Name="GUI_Popup_changeAllMachinesValue_btnNothing" Click="GUI_Popup_changeAllMachinesValue_btnNothing_Click" Width="50">Nothing</Button>
+                <Button DockPanel.Dock="Bottom" Name="GUI_Popup_changeAllMachinesValue_btnDisable" Click="GUI_Popup_changeAllMachinesValue_btnDisable_Click" Width="50">Disable</Button>
+            </DockPanel>
+        </Popup>
     <StackPanel Orientation="Vertical" Margin="0,15,0,0">
             <Button Name="btnOpenFile" Click="btnOpenFile_Click" Width="300">Select virtual machine .vbox file</Button>
-        <StackPanel Name="GUI_MachineData" Orientation="Vertical" HorizontalAlignment="Center" Width="525" Margin="0,15,0,0" Visibility="Hidden">
+            <Button Name="btnPopup" Click="btnPopup_Click"  Width="300">Disable/Enable sync on all machines</Button>
+            <StackPanel Name="GUI_MachineData" Orientation="Vertical" HorizontalAlignment="Center" Width="525" Margin="0,15,0,0" Visibility="Hidden">
             <Label Name="GUI_Label_machineName" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Bold">Machine name</Label>
             <Label Name="GUI_machineName" HorizontalAlignment="Center" HorizontalContentAlignment="Center"></Label>
             <Label Name="GUI_Label_machineUUID" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Bold">Machine UUID</Label>
             <Label Name="GUI_UUID" HorizontalAlignment="Center" HorizontalContentAlignment="Center"></Label>
             <Label Name="GUI_Label_machineOSType" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Bold">Machine OS Type</Label>
             <Label Name="GUI_machineOSType" HorizontalAlignment="Center" HorizontalContentAlignment="Center"></Label>
-        </StackPanel>
-        <WrapPanel Orientation="Vertical" Height="20" HorizontalAlignment="Center" Margin="0,15,0,0">
+            </StackPanel>
+            <Label Name="GUI_changeAllMachinesValue_Status" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
+            <WrapPanel Orientation="Vertical" Height="20" HorizontalAlignment="Center" Margin="0,15,0,0">
             <Button Name="btnSyncDisable" Click="btnSyncDisable_Click" Width="75" Margin="0,0,10,0" Visibility="Hidden">Disable</Button>
             <Button Name="btnSyncEnable" Click="btnSyncEnable_Click" Width="75" Margin="10,0,0,0" Visibility="Hidden">Enable</Button>
         </WrapPanel>
